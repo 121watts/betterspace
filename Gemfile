@@ -30,10 +30,6 @@ gem 'omniauth-github'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'omniauth'
-
-gem 'omniauth-github'
-
 gem 'bootstrap-sass'
 
 group :development, :test do
