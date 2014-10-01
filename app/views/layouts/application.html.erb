@@ -9,12 +9,12 @@
 
 <div class="container">
   <ul class="nav nav-tabs">
-    
+
   </ul>
 </div>
 
   <body>
-    <div id="user_header">
+    <div class="wrapper">
       <% if current_user %>
         Logged in <%= current_user.name %>.
         <%= link_to "Log Out", logout_path %>
