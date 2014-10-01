@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create_github
     user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
-    redirect_to new_warmup_path
+    redirect_to users_path
   end
 
   def destroy
