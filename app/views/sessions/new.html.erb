@@ -1,0 +1,8 @@
+<body>
+    <% if current_user %>
+        Logged in <%= current_user.name %>.
+        <%= link_to "Log Out", logout_path %>
+      <% else %>
+        <%= link_to "Sign in with GitHub", '/auth/github'%>
+  <% end %>
+</body>
