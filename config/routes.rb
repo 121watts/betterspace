@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
 
-  get 'auth/:provider/callback', to: 'sessions#create_github'
-  get 'auth/failure', to: redirect('/')
+  get 'auth/github',             to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure',            to: redirect('/')
 
   root to: 'sessions#new'
 
