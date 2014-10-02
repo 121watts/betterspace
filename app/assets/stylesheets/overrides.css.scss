@@ -1,0 +1,44 @@
+.header {
+  -webkit-background-clip: border-box;
+  -webkit-background-origin: padding-box;
+  -webkit-background-size: cover;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(http://startbootstrap.com/templates/stylish-portfolio/img/bg.jpg);
+  background-origin: padding-box;
+  background-size: cover;
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: table;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 783px;
+  line-height: 20px;
+  position: relative;
+  width: 1440px;
+}
+.text-vertical-center {
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: table-cell;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 783px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  width: 1440px;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+  }
+
+
+  h3 {
+    font-size: 24px;
+  }
+}
