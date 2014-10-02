@@ -25,7 +25,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'octokit'
 
 gem 'omniauth'
-
 gem 'omniauth-github'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -34,11 +33,13 @@ gem 'bootstrap-sass'
 
 group :development, :test do
     gem 'minitest-rails-capybara'
+    gem 'rspec-rails', '~> 3.0.0'
     gem 'pry-rails'
     gem 'launchy'
+    gem "nyan-cat-formatter"
 end
 
-
+gem 'pry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
