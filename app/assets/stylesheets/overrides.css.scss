@@ -1,34 +1,41 @@
 .header {
-  -webkit-background-clip: border-box;
-  -webkit-background-origin: padding-box;
+  // -webkit-background-clip: border-box;
+  // -webkit-background-origin: padding-box;
   -webkit-background-size: cover;
   background-attachment: scroll;
-  background-clip: border-box;
+  // background-clip: border-box;
   background-color: rgba(0, 0, 0, 0);
   background-image: url(http://startbootstrap.com/templates/stylish-portfolio/img/bg.jpg);
-  background-origin: padding-box;
+  // background-origin: padding-box;
   background-size: cover;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   color: rgb(51, 51, 51);
-  display: table;
+  // display: table;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  height: 783px;
+  height: 100;
   line-height: 20px;
   position: relative;
   width: relative;
 }
+
+  // background: url(images/bg.jpg) no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+
 .text-vertical-center {
   box-sizing: border-box;
   color: rgb(51, 51, 51);
   display: table-cell;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  height: 783px;
+  height: 963px;
   line-height: 20px;
   text-align: center;
   vertical-align: middle;
-  width: 1440px;
+  width: 2226px;
 
   h1 {
     margin: 0;
