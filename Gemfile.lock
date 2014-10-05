@@ -51,6 +51,11 @@ GEM
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    geokit (1.9.0)
+      multi_json (>= 1.3.2)
+    geokit-rails (2.0.1)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     haml (4.0.5)
       tilt
     hashie (3.2.0)
@@ -201,6 +206,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara
   coffee-rails (~> 4.0.0)
+  geokit-rails
   haml
   jbuilder (~> 2.0)
   jquery-rails

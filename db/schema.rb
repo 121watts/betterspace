@@ -11,28 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002165223) do
+ActiveRecord::Schema.define(version: 20141003130447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "complaints", force: true do |t|
-    t.string   "complaint_number"
+    t.string   "created_date"
+    t.string   "closed_date"
+    t.string   "agency"
+    t.string   "agency_name"
+    t.string   "complaint_type"
+    t.string   "descriptor"
+    t.string   "location_type"
+    t.string   "zip"
+    t.string   "address"
+    t.string   "street_name"
+    t.string   "address_type"
+    t.string   "city"
     t.string   "status"
-    t.string   "date_entered"
-    t.string   "house_number"
-    t.string   "house_street"
-    t.string   "inspection_date"
+    t.string   "borough"
+    t.float    "lat"
+    t.float    "long"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bin"
-    t.string   "community_board"
-    t.string   "special_district"
-    t.string   "complaint_category"
-    t.string   "unit"
-    t.string   "disposition_date"
-    t.string   "disposition_code"
-    t.string   "dob_run_date"
   end
 
   create_table "users", force: true do |t|
@@ -42,7 +45,6 @@ ActiveRecord::Schema.define(version: 20141002165223) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
-    t.string   "nickname"
   end
 
 end

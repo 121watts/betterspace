@@ -16,7 +16,7 @@
   height: 783px;
   line-height: 20px;
   position: relative;
-  width: 1440px;
+  width: relative;
 }
 .text-vertical-center {
   box-sizing: border-box;
@@ -41,4 +41,24 @@
   h3 {
     font-size: 24px;
   }
+}
+
+#map {
+  height: 100%;
+  width: 600px;
+}
+
+#map-container {
+   height: 400px;
+   border-radius: 16px 16px;
+   border-color: #fff;
+   border-style: solid;
+   box-shadow: 2px 2px 10px #B1B1B1;
+   margin-top: 25px;
+   border-width: 7px;
+}
+
+#map-canvas {
+  height: 384px;
+  width: 100%;
 }

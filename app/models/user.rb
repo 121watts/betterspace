@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
     user = User.new
     user.provider = auth["provider"]
     user.uid = auth["uid"]
-    user.nickname = auth["info"]["nickname"]
     user.image_url = auth["info"]["image"]
     user.name = auth["info"]["name"]
     user.save

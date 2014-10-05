@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'signup', to: 'sessions#new',     as: 'signup'
+  get 'signup', to: 'sessions#new',     as: '/'
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :sessions
-  resources :users
+  resources :sessions,   only: [:new, :destroy]
+  resources :users,      only: [:new, :index] 
+  resources :complaints, only: [:index]
 
-  get 'auth/github',             to: 'sessions#create'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure',            to: redirect('/')
 

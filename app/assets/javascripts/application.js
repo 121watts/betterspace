@@ -15,3 +15,23 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+function initialize() {
+  var mapOptions = {
+    zoom: 12,
+    center: new google.maps.LatLng(40.7833, -73.9667),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var myLatlng = new google.maps.LatLng(40.7833, -73.9667);
+  var map = new google.maps.Map(document.getElementById("map-canvas"),
+      mapOptions);
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+  });
+}
+
+$(document).ready(function(){
+    initialize();
+});

@@ -1,6 +1,6 @@
 case Rails.env
   when "development"
-    Complaint.copy_from "tmp/complaints_dev.csv"
+    Complaint.copy_from "tmp/sexy_complaints.csv"
   when "production"
-    Complaint.copy_from "tmp/complaints.csv"
+    Complaint.copy_from "tmp/sexy_complaints.csv"
 end
