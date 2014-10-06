@@ -1,15 +1,3 @@
-/*!
- * Searchable Map Template with Google Fusion Tables
- * http://derekeder.com/searchable_map_template/
- *
- * Copyright 2012, Derek Eder
- * Licensed under the MIT license.
- * https://github.com/derekeder/FusionTable-Map-Template/wiki/License
- *
- * Date: 12/10/2012
- *
- */
-
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 
@@ -21,7 +9,7 @@ var MapsLib = {
 
   //the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be deprecated soon
-  fusionTableId:      "1c2AL6IbCMiKdaoSwcJza9nwJeAA1ojoW-jne2ZWx",
+  fusionTableId:      "138DHhfV2SG6tjIIxR7nqJD1BkZNYLbyY7Z84Wxr7",
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -30,7 +18,7 @@ var MapsLib = {
   //name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
-  locationColumn:     "geometry",
+  locationColumn:    "lat",
 
   map_centroid:       new google.maps.LatLng(40.7127, -74.0059), //center that your map defaults to
   locationScope:      "new york",      //geographical area appended to all address searches
@@ -39,7 +27,7 @@ var MapsLib = {
 
   searchRadius:       805,            //in meters ~ 1/2 mile
   defaultZoom:        11,             //zoom level when map is loaded (bigger is more zoomed in)
-  addrMarkerImage:    'images/blue-pushpin.png',
+  // addrMarkerImage:    'images/blue-pushpin.png',
   currentPinpoint:    null,
 
   initialize: function() {
@@ -73,7 +61,7 @@ var MapsLib = {
     $("#result_box").hide();
 
     //-----custom initializers-------
-
+    $("#text_search").val("");
     //-----end of custom initializers-------
 
     //run the default search
@@ -88,7 +76,13 @@ var MapsLib = {
     var whereClause = MapsLib.locationColumn + " not equal to ''";
 
     //-----custom filters-------
-
+    var type_column = "'complaint_type'";
+    var tempWhereClause = [];
+    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Elevator");
+    if ( $("#cbType2").is(':checked')) tempWhereClause.push("Plumbing");
+    if ( $("#cbType3").is(':checked')) tempWhereClause.push("Electrical");
+    if ( $("#cbType4").is(':checked')) tempWhereClause.push("Illegal Animal Sold");
+    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
     //-------end of custom filters--------
 
     if (address != "") {
@@ -289,8 +283,8 @@ var MapsLib = {
   }
 
   //-----custom functions-------
+
   // NOTE: if you add custom functions, make sure to append each one with a comma, except for the last one.
   // This also applies to the convertToPlainString function above
-
   //-----end of custom functions-------
 }
