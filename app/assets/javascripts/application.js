@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require underscore
+//= require markercluster
 //= require_tree .
