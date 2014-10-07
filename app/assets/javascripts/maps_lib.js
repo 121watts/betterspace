@@ -144,22 +144,19 @@ var MapsLib = {
         });
       });
 
-      var markerCluster = new MarkerClusterer(map, markers);
+      var mcOptions = { maxZoom: 19, minimumClusterSize: 3 };
+      var markerCluster = new MarkerClusterer(map, markers, mcOptions);
 
       var contentString = complaint.descriptor;
+
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
-
+      
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map,marker);
       });
     });
-
-  //
-
-  //
-  //
 
   },
 
