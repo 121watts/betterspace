@@ -140,24 +140,31 @@ var MapsLib = {
     $.get('/api/complaints', function(data) {
       var markers = _.map(data.complaints, function(complaint) {
         return new google.maps.Marker({
-          position:  new google.maps.LatLng(complaint.lat, complaint.long)
+          position:  new google.maps.LatLng(complaint.lat, complaint.long),
+          description: complaint.descriptor
         });
       });
 
+      var length = markers.length - 1;
+      var infowindow = new google.maps.InfoWindow({
+        content: "Stuff"
+      });
+
+      for(var i = 0; i < length; i++) {
+        google.maps.event.addListener(markers[i], 'click', function() {
+          var contentString = data.complaints[i].descriptor;
+          // var infowindow = new google.maps.InfoWindow({
+          //   content: contentString
+          // })
+
+          infowindow.setContent(this.description)
+          infowindow.open(map, this);
+        });
+      }
+
       var mcOptions = { maxZoom: 19, minimumClusterSize: 3 };
       var markerCluster = new MarkerClusterer(map, markers, mcOptions);
-
-      var contentString = complaint.descriptor;
-
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-      
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map,marker);
-      });
     });
-
   },
 
   clearSearch: function() {
