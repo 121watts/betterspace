@@ -15,5 +15,6 @@
 //= require bootstrap
 //= require turbolinks
 //= require underscore
+//= require navbar
 //= require markercluster
 //= require_tree .

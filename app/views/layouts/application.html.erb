@@ -9,5 +9,14 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+
+  <%= render 'layouts/navbar' %>
+
+  <div class="container">
+    <% flash.each do |name, msg| %>
+	    <%= content_tag :div, msg, :class => "alert flash #{name}" %>
+	  <% end %>
+  </div>
+
   <%= yield %>
 </html>
