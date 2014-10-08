@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
     user.save
     user
   end
+
+  def first_name
+    user.name
+  end
 end

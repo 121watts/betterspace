@@ -145,6 +145,7 @@ var MapsLib = {
         });
       });
 
+      var markerCluster = new MarkerClusterer(map, markers, mcOptions);
       var length = markers.length - 1;
       var infowindow = new google.maps.InfoWindow({
         content: "Stuff"
@@ -159,8 +160,7 @@ var MapsLib = {
         });
       }
 
-      var mcOptions = { maxZoom: 19, minimumClusterSize: 3 };
-      var markerCluster = new MarkerClusterer(map, markers, mcOptions);
+      var mcOptions = { maxZoom: 19, minimumClusterSize: 3 }
     });
   },
 
