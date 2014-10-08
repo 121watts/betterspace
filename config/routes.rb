@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :sessions,   only: [:new, :destroy]
   resources :users,      only: [:new, :index]
   resources :complaints, only: [:index]
+  resources :api_keys,   only: [:index, :create, :destroy]
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure',            to: redirect('/')
