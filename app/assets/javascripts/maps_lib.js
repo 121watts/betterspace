@@ -137,7 +137,7 @@ var MapsLib = {
 
   submitSearch: function(whereClause, map, location) {
 
-    $.get('/api/complaints', function(data) {
+    $.get('/api/v1/complaints', function(data) {
       var markers = _.map(data.complaints, function(complaint) {
         return new google.maps.Marker({
           position:  new google.maps.LatLng(complaint.lat, complaint.long),

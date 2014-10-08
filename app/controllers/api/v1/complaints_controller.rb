@@ -1,7 +1,7 @@
 class Api::V1::ComplaintsController<ApplicationController
   respond_to :json
 
-  before_action :authenticate
+  before_action :authenticate, except: [:index]
 
   def index
     @complaints = Complaint.limit(1000)
