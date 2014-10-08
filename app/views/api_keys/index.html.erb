@@ -30,14 +30,14 @@
     </div>
 
   <div class="text-center">
-    <h1>Your API Keys</h1>
+    <h1>Your API Keys, <%=current_user.first_name%></h1>
 
     <hr>
 
     <%= link_to "Create API Key", api_keys_path, method: :post, class: "btn btn-success" %>
 
     <% if current_user.api_keys.empty? %>
-      <h3>You don't have any API keys yet.</h3>
+      <h3>You don't have any API keys yet</h3>
     <% else %>
       <% current_user.api_keys.each do |api_key| %>
         <h3><%= api_key.token %></h3>

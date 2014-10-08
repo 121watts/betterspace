@@ -17,6 +17,6 @@ class User < ActiveRecord::Base
   end
 
   def first_name
-    user.name
+    name.split[0]
   end
 end
