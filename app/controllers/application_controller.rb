@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  def authorize
+  def allow
     redirect_to login_url, alert: "You must be logged in to access that" if current_user.nil?
   end
 

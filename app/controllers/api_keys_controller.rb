@@ -1,6 +1,6 @@
 class ApiKeysController < ApplicationController
 
-  before_action :authorize
+  before_filter :allow
 
   def index
     @api_keys = current_user.api_keys

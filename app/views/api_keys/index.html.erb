@@ -1,7 +1,7 @@
 <h1>Your API Keys</h1>
 
 <hr>
-
+}  
 <%= link_to "Create API Key", api_keys_path, method: :post, class: "btn btn-success" %>
 
 <% if current_user.api_keys.empty? %>
@@ -9,7 +9,7 @@
 <% else %>
   <% current_user.api_keys.each do |api_key| %>
     <h3><%= api_key.token %></h3>
-    <h4><%= api_key.created_at %></h4>
+    <h4><%= time_ago_in_words(api_key.created_at) %> ago</h4>
     <%= link_to "Delete", api_key_path(api_key), method: :delete %>
   <% end %>
 <% end %>
