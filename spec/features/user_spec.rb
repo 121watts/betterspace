@@ -25,5 +25,10 @@ describe "user experience" do
       click_on "find me"
       expect(current_path).to eq complaints_path
     end
+
+    it "should be able to click on contact us link" do
+      click_on "Contact"
+      expect(current_path).to eq contacts_path
+    end
   end
 end

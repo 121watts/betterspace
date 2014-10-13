@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'mail_form'
+
+gem 'simple_form'
 
 gem 'active_model_serializers'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -43,6 +46,7 @@ group :development, :test do
     gem 'pry-rails'
     gem 'launchy'
     gem "nyan-cat-formatter"
+    gem 'shoulda-matchers', require: false
 end
 
 gem 'pry'
