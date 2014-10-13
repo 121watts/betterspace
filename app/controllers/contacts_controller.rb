@@ -11,9 +11,10 @@ class ContactsController < ApplicationController
       flash[:notice] = 'Thank you for your message!'
       redirect_to complaints_path
     else
-      flash[:notice] = 'Cannot send message.'
+      flash[:notice]
       render :new
     end
+  rescue ScriptError { flash[:notice] = 'Sorry, this message appears to be spam and was not delivered.'}
   end
 
 end

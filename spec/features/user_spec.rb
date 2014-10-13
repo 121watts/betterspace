@@ -30,5 +30,10 @@ describe "user experience" do
       click_on "Contact"
       expect(current_path).to eq contacts_path
     end
+
+    it 'should redirect to login if not logged in' do
+      click_on "Sign in"
+      expect(current_path).to eq login_path
+    end
   end
 end
