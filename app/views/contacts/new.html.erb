@@ -7,7 +7,7 @@
       *denotes a required field
   </div></br>
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, label: "Name", placeholder: "name" %>
+    <%= f.input :name, label: "", placeholder: "name" %>
     <%= f.input :email, label: "", placeholder: "email" %>
     <%= f.input :message, :as => :text, label: false, placeholder: "your message"  %>
     <div class= "hidden">
@@ -15,7 +15,7 @@
     </div>
     <div>
       </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      <%= f.button :submit, 'Send Message', :class=> "btn btn-primary" %>
     </div>
   <% end %>
 </div>

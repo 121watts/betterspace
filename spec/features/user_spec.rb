@@ -34,9 +34,9 @@ describe "user experience" do
     it "should be able to send a contact form successfully" do
       click_on "Contact"
       expect(current_path).to eq contacts_path
-      fill_in "Name", with: "Watts"
-      fill_in "Email", with: "yourmom123@aol.com"
-      fill_in "Message", with: "This is a test"
+      find("input[placeholder='name']").set "watts"
+      find("input[placeholder='email']").set "yourmom123@aol.com"
+      find("textarea[placeholder='your message']").set "watts"      
       page.find('.btn-primary').click
       expect(current_path).to eq complaints_path
       expect(page).to have_content "Thank you for your message!"
