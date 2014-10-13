@@ -37,7 +37,9 @@ describe "user experience" do
       fill_in "Name", with: "Watts"
       fill_in "Email", with: "yourmom123@aol.com"
       fill_in "Message", with: "This is a test"
-      page.find('.btn-primary').click 
+      page.find('.btn-primary').click
+      expect(current_path).to eq complaints_path
+      expect(page).to have_content "Thank you for your message!"
     end
   end
 end
