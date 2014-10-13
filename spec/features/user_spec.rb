@@ -30,5 +30,14 @@ describe "user experience" do
       click_on "Contact"
       expect(current_path).to eq contacts_path
     end
+
+    it "should be able to send a contact form successfully" do
+      click_on "Contact"
+      expect(current_path).to eq contacts_path
+      fill_in "Name", with: "Watts"
+      fill_in "Email", with: "yourmom123@aol.com"
+      fill_in "Message", with: "This is a test"
+      page.find('.btn-primary').click 
+    end
   end
 end
