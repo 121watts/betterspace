@@ -1,12 +1,15 @@
 <div class="container">
 <%= render "layouts/flash" %>
 </div>
-<div align="center", class="containter-fluid">
-  <h3>Send Us a Message</h3>
+<div align="center", class="col-md-12">
+  <h1>Send Us a Message</h1>
+  <div>
+      *denotes a required field
+  </div></br>
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %></br>
-    <%= f.input :email, :required => true %></br>
-    <%= f.input :message, :as => :text, :required => true %>
+    <%= f.input :name, label: "Name", placeholder: "name" %>
+    <%= f.input :email, label: "", placeholder: "email" %>
+    <%= f.input :message, :as => :text, label: false, placeholder: "your message"  %>
     <div class= "hidden">
       <%= f.input :nickname, :hint => 'Leave this field blank!' %>
     </div>
