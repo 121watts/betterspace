@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     namespace :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :complaints, only: [:index, :show]
     end
-
   end
+
 
   get 'contacts', to: 'contacts#new',     as: 'contact'
   get 'signup',   to: 'sessions#new',     as: '/'
