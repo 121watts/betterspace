@@ -138,7 +138,8 @@ var MapsLib = {
   submitSearch: function(whereClause, map, location) {
 
     $.get('/api/v1/complaints', function(data) {
-      var markers = _.map(data.complaints, function(complaint) {
+
+      var markers = _.map(data, function(complaint) {
         return new google.maps.Marker({
           position:  new google.maps.LatLng(complaint.lat, complaint.long),
           description: complaint.address + ":   " + complaint.descriptor
@@ -154,7 +155,7 @@ var MapsLib = {
       for(var i = 0; i < length; i++) {
 
         google.maps.event.addListener(markers[i], 'click', function() {
-          var contentString = data.complaints[i].descriptor;
+          var contentString = data[i].descriptor;
           infowindow.setContent(this.description)
           infowindow.open(map, this);
         });

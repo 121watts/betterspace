@@ -4,7 +4,7 @@ gem 'mail_form'
 
 gem 'simple_form'
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.8.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'rails', '4.1.4'
@@ -39,6 +39,8 @@ gem 'omniauth-github'
 gem 'spring',        group: :development
 
 gem 'bootstrap-sass'
+
+gem 'redis-rails'
 
 group :development, :test do
     gem 'capybara'

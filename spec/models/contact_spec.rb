@@ -9,5 +9,5 @@ describe Contact do
   it { should allow_value("email@addresse.foo").for(:email) }
 
   it { should_not allow_value("foo", '*&^%$#@!$@%$#^&').for(:email) }
-
+  
 end

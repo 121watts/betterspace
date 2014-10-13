@@ -10,11 +10,11 @@ class ContactsController < ApplicationController
     if @contact.deliver
       flash[:notice] = 'Thank you for your message!'
       redirect_to complaints_path
+      UserMailer.contact_us(current_user).deliver
     else
       flash[:notice]
       render :new
     end
-  rescue ScriptError { flash[:notice] = 'Sorry, this message appears to be spam and was not delivered.'}
   end
 
 end

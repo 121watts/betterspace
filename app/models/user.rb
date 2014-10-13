@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
     user.uid = auth["uid"]
     user.image_url = auth["info"]["image"]
     user.name = auth["info"]["name"]
+    user.email = auth["info"]["email"]
     user.save
     user
   end
