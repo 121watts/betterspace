@@ -48,5 +48,16 @@ describe "user experience" do
       expect(page).to have_content("Example User")
     end
 
+    it 'should be able to click on link developer' do
+      click_on "Developer"
+      expect(current_path).to eq api_keys_path
+    end
+
+    it 'should see your first name in h1' do
+      click_on "Developer"
+      expect(current_path).to eq api_keys_path
+      expect(page.find('h1')).to have_content "Example"
+    end
+
   end
 end
