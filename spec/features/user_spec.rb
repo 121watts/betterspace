@@ -53,7 +53,7 @@ describe "user experience" do
       expect(current_path).to eq api_keys_path
     end
 
-    it 'should see your first name in h1' do
+    it 'should see your first name on the develeoper page' do
       click_on "Developer"
       expect(current_path).to eq api_keys_path
       expect(page.find('h1')).to have_content "Example"
