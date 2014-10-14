@@ -42,12 +42,14 @@ gem 'bootstrap-sass'
 
 gem 'redis-rails'
 
+gem "codeclimate-test-reporter", group: :test, require: nil
+
 group :development, :test do
     gem 'capybara'
     gem 'rspec-rails', '~> 3.0.0'
     gem 'pry-rails'
     gem 'launchy'
-    gem "nyan-cat-formatter"
+    gem 'nyan-cat-formatter'
     gem 'shoulda-matchers', require: false
 end
 

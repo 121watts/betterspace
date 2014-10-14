@@ -14,6 +14,7 @@ class Api::V1::ComplaintsController<ApplicationController
   end
 
   def show
+    binding.pry
     @complaint = Complaint.find(params[:id])
     respond_with @complaint
   end
@@ -22,7 +23,7 @@ class Api::V1::ComplaintsController<ApplicationController
 
   def authenticate
     authenticate_or_request_with_http_token do |token|
-       ApiKey.exists?(token: token)
+      ApiKey.exists?(token: token)
     end
   end
 end
