@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe 'contact form' do
   before(:each) do
-    visit contacts_path
+    visit root_path
+    click_on "Sign in with GitHub"
+    click_on "Contact"
   end
 
   it "should be able to send a contact form successfully" do

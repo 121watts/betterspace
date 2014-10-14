@@ -8,8 +8,11 @@ class UserMailer < ActionMailer::Base
   end
 
   def contact_us(current_user)
+    if Rails.env = "test"
+      current_user.email = "noreply@apple.com"
+    end
     @user = current_user
     @url  = 'http://localhost:3000/login'
-    mail(to: @user.email, subject: 'Thank you for contacting us!')    
+    mail(to: @user.email, subject: 'Thank you for contacting us!')
   end
 end

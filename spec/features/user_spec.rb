@@ -36,4 +36,17 @@ describe "user experience" do
       expect(current_path).to eq login_path
     end
   end
+
+  context "as a verified user" do
+
+    before(:each) do
+      visit root_path
+      click_on "Sign in with GitHub"
+    end
+
+    it 'should see your name when logged in' do
+      expect(page).to have_content("Example User")
+    end
+
+  end
 end
