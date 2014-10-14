@@ -15,7 +15,7 @@ class Api::V1::ComplaintsController<ApplicationController
 
   def show
     @complaint = Complaint.find(params[:id])
-    respond_with @complaint, each_serializer: Api::V1::ComplaintSerializer
+    respond_with @complaint
   end
 
   private

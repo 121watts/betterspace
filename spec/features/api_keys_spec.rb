@@ -23,6 +23,7 @@ describe 'Generation of ApiKeys' do
     expect(page).to have_content "You don't have any API keys yet"
     4.times {click_on "Create API Key"}
     expect(page).to_not have_content "You don't have any API keys yet"
+    expect(page).to     have_content "created."
     expect(page).to have_css(".token", count: 4)
   end
 
