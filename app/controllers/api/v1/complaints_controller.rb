@@ -14,7 +14,6 @@ class Api::V1::ComplaintsController<ApplicationController
   end
 
   def show
-    binding.pry
     @complaint = Complaint.find(params[:id])
     respond_with @complaint
   end

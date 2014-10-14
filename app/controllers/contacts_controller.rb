@@ -9,8 +9,8 @@ class ContactsController < ApplicationController
     @contact.request = request
     if @contact.deliver
       flash[:notice] = 'Thank you for your message!'
-      redirect_to complaints_path
       UserMailer.contact_us(current_user).deliver
+      redirect_to complaints_path
     else
       flash[:notice]
       render :new

@@ -44,6 +44,8 @@ gem 'redis-rails'
 
 gem "codeclimate-test-reporter", group: :test, require: nil
 
+gem 'figaro'
+
 group :development, :test do
     gem 'capybara'
     gem 'rspec-rails', '~> 3.0.0'
