@@ -1,5 +1,4 @@
 class Contact < MailForm::Base
-  attribute :name, validate: true
   attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :nickname,  captcha: true
   attribute :message
@@ -11,7 +10,7 @@ class Contact < MailForm::Base
     {
       :subject => "BetterSpace Contact Form",
       :to => "betterspacenyc@gmail.com",
-      :from => %("#{name}" "<#{email}>")
+      :from => "<#{email}>"
     }
   end
 

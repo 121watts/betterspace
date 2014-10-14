@@ -7,7 +7,6 @@
       *denotes a required field
   </div></br>
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, label: "", placeholder: "name" %>
     <%= f.input :email, label: "", placeholder: "email" %>
     <%= f.input :message, :as => :text, label: false, placeholder: "your message"  %>
     <div class= "hidden">
