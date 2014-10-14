@@ -10,7 +10,6 @@ describe "Logging in with OmniAuth" do
     expect(page).to     have_content "Sign Out"
    end
 
-  #resque_mailer
   it 'can sign out' do
     visit '/'
     click_on "Sign in with GitHub"
