@@ -10,7 +10,6 @@ class ContactsController < ApplicationController
     if @contact.deliver
       flash[:notice] = 'Thank you for your message!'
       UserMailer.contact_us(current_user).deliver
-      binding.pry
       redirect_to complaints_path
     else
       flash[:notice]
