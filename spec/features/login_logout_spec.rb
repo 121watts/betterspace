@@ -1,9 +1,14 @@
 require 'rails_helper'
+include Register
 
 describe "Logging in with OmniAuth" do
 
+  before(:each) do
+    add_email_to_omniauth_hash
+  end
+
   it 'can sign in with omniauth' do
-    visit '/'
+    visit root_path
     click_on "Sign in with GitHub"
     expect(current_path).to eq complaints_path
     expect(page).to_not have_content "Sign in"
@@ -11,7 +16,7 @@ describe "Logging in with OmniAuth" do
    end
 
   it 'can sign out' do
-    visit '/'
+    visit root_path
     click_on "Sign in with GitHub"
     expect(current_path).to eq complaints_path
     click_on "Sign Out"

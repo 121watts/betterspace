@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates_uniqueness_of :uid, :name
+  
   has_many :api_keys
 
   def self.from_omniauth(auth)

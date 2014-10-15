@@ -5,20 +5,18 @@ describe 'email verification' do
   context 'as a user who has never registered before' do
 
     before (:each) do
-      visit root_path
-      click_on "Sign in with GitHub"
-      @user = User.find_by uid: "1234"
+      first_time_login
     end
 
     it 'redirects us to email verification page if email is nil' do
-      expect(@user.email).to eq nil
-      expect(current_path).to eq user_path(@user)
+      user = User.find_by uid: "1234"
+      expect(user.email).to eq nil
+      expect(current_path).to eq user_path(user)
       expect(page).to have_content "Verify Your Email"
     end
 
     it 'can enter an email address' do
       find("input[placeholder='your email']").set "test@test.com"
-      save_and_open_page
       click_on "Verify Email"
       expect(current_path).to eq complaints_path
       expect(page).to have_content("Welcome to BetterSpace")
@@ -31,11 +29,7 @@ describe 'email verification' do
   context 'as a returning user' do
 
     before (:each) do
-      #this creates an omniauth test user (which doesn't have an email)
-      visit root_path
-      click_on "Sign in with GitHub"
-      User.update_all(email: "test@test.com")
-      @user = User.find_by uid: "1234"
+      add_email_to_omniauth_hash
     end
 
     it 'redirects us to home when there is an email present' do
