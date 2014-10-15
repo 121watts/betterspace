@@ -1,13 +1,13 @@
 require 'rails_helper'
+include Register
 
 describe 'contact form' do
   before(:each) do
-    visit root_path
-    click_on "Sign in with GitHub"
+    add_email_to_omniauth_hash
     click_on "Contact"
   end
 
-  xit "should be able to send a contact form successfully" do
+  it "should be able to send a contact form successfully" do
     find("input[placeholder='name']").set "watts"
     find("input[placeholder='email']").set "yourmom123@aol.com"
     find("textarea[placeholder='your message']").set "watts"
