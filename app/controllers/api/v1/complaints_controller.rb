@@ -4,20 +4,25 @@ class Api::V1::ComplaintsController<ApplicationController
   before_action :authenticate, except: [:index]
 
   def index
-    @complaints = Complaint.limit(25000)
-    respond_with @complaints, each_serializer: Api::V1::ComplaintSerializer
+    if Rails.cache.exist?(Complaint.collection_cache_key)
+      complaints = Rails.cache.read(Complaint.collection_cache_key)
+    else
+      complaints = ActiveModel::ArraySerializer.new(Complaint.limit(25000), each_serializer: Api::V1::ComplaintSerializer).to_json
+      Rails.cache.write(Complaint.collection_cache_key, complaints)
+    end
+    render json: complaints
   end
 
   def show
     @complaint = Complaint.find(params[:id])
-    respond_with @complaint, each_serializer: Api::V1::ComplaintSerializer
+    respond_with @complaint
   end
 
   private
 
   def authenticate
     authenticate_or_request_with_http_token do |token|
-       ApiKey.exists?(token: token)
+      ApiKey.exists?(token: token)
     end
   end
 end

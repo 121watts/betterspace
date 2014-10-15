@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'mail_form'
 
-gem 'active_model_serializers'
+gem 'resque'
+
+gem 'simple_form'
+
+gem 'active_model_serializers', '~> 0.8.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'rails', '4.1.4'
@@ -37,12 +42,19 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass'
 
+gem 'redis-rails'
+
+gem "codeclimate-test-reporter", group: :test, require: nil
+
+gem 'figaro'
+
 group :development, :test do
     gem 'capybara'
     gem 'rspec-rails', '~> 3.0.0'
     gem 'pry-rails'
     gem 'launchy'
-    gem "nyan-cat-formatter"
+    gem 'nyan-cat-formatter'
+    gem 'shoulda-matchers', require: false
 end
 
 gem 'pry'

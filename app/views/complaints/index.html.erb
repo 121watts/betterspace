@@ -7,7 +7,6 @@
     <meta content='' name='description' />
     <meta content='' name='author' />
     <!-- Styles -->
-
     <link rel="stylesheet" href="/assets/bootstrap.min.css?body=1"/>
     <link rel="stylesheet" href="/assets/custom.css?body=1"/>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -19,6 +18,7 @@
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-4'>
+          <%= render "layouts/flash" %>
           <p>This is a searchable map of <a href='https://nycopendata.socrata.com/'>NYC's Open Data</a> <a href='https://nycopendata.socrata.com/data?cat=housing%20%26%20development'>DoB open complaints</a>.
           <div class='well'>
             <h3>Instructions</h3>

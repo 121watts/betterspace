@@ -25,5 +25,39 @@ describe "user experience" do
       click_on "find me"
       expect(current_path).to eq complaints_path
     end
+
+    it "should be able to click on contact us link" do
+      click_on "Contact"
+      expect(current_path).to eq contacts_path
+    end
+
+    it 'should redirect to login if not logged in' do
+      click_on "Sign in"
+      expect(current_path).to eq login_path
+    end
+  end
+
+  context "as a verified user" do
+
+    before(:each) do
+      visit root_path
+      click_on "Sign in with GitHub"
+    end
+
+    it 'should see your name when logged in' do
+      expect(page).to have_content("Example User")
+    end
+
+    it 'should be able to click on link developer' do
+      click_on "Developer"
+      expect(current_path).to eq api_keys_path
+    end
+
+    it 'should see your first name on the develeoper page' do
+      click_on "Developer"
+      expect(current_path).to eq api_keys_path
+      expect(page.find('h1')).to have_content "Example"
+    end
+
   end
 end

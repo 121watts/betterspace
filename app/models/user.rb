@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   validates_uniqueness_of :uid, :name
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :update }
+
+
   has_many :api_keys
 
   def self.from_omniauth(auth)

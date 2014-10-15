@@ -5,11 +5,8 @@ module OmniauthMacros
       'uid' => '123545',
       'user_info' => {
         'name' => 'mockuser',
-        'image_url' => 'mock_user_thumbnail_url'
-      },
-      'credentials' => {
-        'token' => 'mock_token',
-        'secret' => 'mock_secret'
+        'image_url' => 'mock_user_thumbnail_url', 
+        'email' => 'noreply@apple.com'
       }
     }
   end
