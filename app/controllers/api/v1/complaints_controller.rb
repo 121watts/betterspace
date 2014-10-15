@@ -4,7 +4,7 @@ class Api::V1::ComplaintsController<ApplicationController
   before_action :authenticate, except: [:index]
 
   def index
-    @complaints = Complaint.limit(1000)
+    @complaints = Complaint.limit(25000)
     respond_with @complaints, each_serializer: Api::V1::ComplaintSerializer
   end
 

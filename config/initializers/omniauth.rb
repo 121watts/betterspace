@@ -1,8 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   if Rails.env.production?
-    provider :github, 'a19dcd4c1b219ad2f665', '3f7326c8219be08c868c45b0cae5210500af40b8'
+    provider :github, '255ac5a8289abdc15793', '991a8dd5d6e4f4ef89e9f958021ea4294677fc5c'
   elsif Rails.env.development?
-    provider :github, 'a19dcd4c1b219ad2f665', '3f7326c8219be08c868c45b0cae5210500af40b8'
+    provider :github, '255ac5a8289abdc15793', '991a8dd5d6e4f4ef89e9f958021ea4294677fc5c'
   end
   OmniAuth.config.logger = Rails.logger
 end
