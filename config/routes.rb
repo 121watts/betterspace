@@ -1,6 +1,10 @@
 require 'api_constraints'
+require 'resque/server'
 
 Rails.application.routes.draw do
+
+
+  mount Resque::Server.new, at: "/resque"
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1, constraints: ApiConstraints.new(version: 1, default: true) do

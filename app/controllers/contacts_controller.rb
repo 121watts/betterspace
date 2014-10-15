@@ -8,8 +8,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
+      Resque.enqueue(ContactUsEmail, current_user)
       flash[:notice] = 'Thank you for your message!'
-      UserMailer.contact_us(current_user).deliver
       redirect_to complaints_path
     else
       flash[:notice]

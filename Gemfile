@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'mail_form'
 
+gem 'resque'
+
 gem 'simple_form'
 
 gem 'active_model_serializers', '~> 0.8.0'
