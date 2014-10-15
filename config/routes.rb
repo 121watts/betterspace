@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :contacts,   only: [:new, :create]
   resources :sessions,   only: [:new, :destroy]
-  resources :users,      only: [:new, :index]
+  resources :users
   resources :complaints, only: [:index]
   resources :api_keys,   only: [:index, :create, :destroy]
 
