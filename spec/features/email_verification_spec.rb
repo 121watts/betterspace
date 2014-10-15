@@ -1,4 +1,5 @@
 require 'rails_helper'
+include Register
 
 describe 'email verification' do
 
@@ -22,6 +23,14 @@ describe 'email verification' do
       expect(page).to have_content("Welcome to BetterSpace")
       user = User.find_by email: "test@test.com"
       expect(user.uid).to eq "1234"
+    end
+
+    it 'cannot enter a nonsense email address' do
+      find("input[placeholder='your email']").set "goo$%^^"
+      click_on "Verify Email"
+      user = User.find_by uid: "1234"
+      expect(current_path).to eq user_path(user)
+      expect(page).to have_content "invalid"
     end
 
   end

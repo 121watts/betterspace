@@ -1,12 +1,12 @@
 <div class="container">
-<%= render "layouts/flash" %>
-</div>
-<div align="center", class="col-md-12">
-  <h1>Please Verify Your Email</h1>
-  <%= simple_form_for @user, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :email, label: false, placeholder: "your email" %>
-    <div></br>
-      <%= f.submit 'Verify Email', :class=> "btn btn-primary" %>
-    </div>
-  <% end %>
+    <%= render "layouts/error" %>
+  <div align="center", class="col-md-12">
+    <h1>Please Verify Your Email</h1>
+    <%= simple_form_for @user, :html => {:class => 'form-horizontal' } do |f| %>
+      <%= f.input :email, label: false, error: false, placeholder: "your email" %>
+      <div></br>
+        <%= f.submit 'Verify Email', :class=> "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
