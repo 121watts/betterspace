@@ -8,7 +8,7 @@ module Register
   def add_email_to_omniauth_hash
     visit root_path
     click_on "Sign in with GitHub"
-    User.update_all(email: "test@test.com")
+    User.update_all(email: "noreply@apple.com")
   end
 
 end

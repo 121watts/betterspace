@@ -17,11 +17,11 @@ describe 'email verification' do
     end
 
     it 'can enter an email address' do
-      find("input[placeholder='your email']").set "test@test.com"
+      find("input[placeholder='your email']").set "noreply@apple.com"
       click_on "Verify Email"
       expect(current_path).to eq complaints_path
       expect(page).to have_content("Welcome to BetterSpace")
-      user = User.find_by email: "test@test.com"
+      user = User.find_by email: "noreply@apple.com"
       expect(user.uid).to eq "1234"
     end
 
