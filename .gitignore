@@ -51,3 +51,7 @@ build/
 
 # Ignore application configuration
 /config/application.yml
+
+# I don't know why redis is installed
+/reds-2.8.9/*
+/redis-2.8.9.tar.gs
