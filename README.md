@@ -1,37 +1,63 @@
-betterspace
-===========
+What is BetterSpaceNYC?
+==
 
-lets you know if the buildings in your area have complaints submitted to
-the Department of Buildings
+BetterSpaceNYC allows NYC residents to see which areas suck and which areas don't.
+With a simply search of the map you can find out which spots in NYC have the most
+or least complaints submitted to NYC's Department of Buildings.
+
+Complaints range from Illegal Animal's Sold to Elevator's Being out.  All complaints
+on the site are currently active and open with the Department of Buildings.
+
+The complaints are bunched together in pretty colors with numbers inside of them.
+ If you click on the pretty colors the map
+will zoom in closer to give you a more specific view!  Ohhhhh.
+
+You can locate the site [by clicking here](http://198.199.83.225/)
+
+Developers
+--
+If you'd like access to the BetterSpace API you can access all 50,000+ active complaints
+by hitting:
+
+- /api/v1/complaints.json
+
+with a simple GET request.  That will give you all the complaint
+street addresses, complaint types, and complaint ID's.
+
+If you'd like access more information for a specific complaint you can sign into the site
+with GitHub, click the [developer's link](http://198.199.83.225/api_keys), and get yourself
+a fancy new API Key Token doober. An API Key token doober gets you access to all this data for an individual complaint:
+
+- created_date
+- closed_date
+- agency
+- agency_name
+- complaint_type
+- descriptor
+- location_type
+- zip
+- address
+- street_name
+- address_type
+- city
+- status
+- borough
+- lat
+- long
+- location
 
 
-10/13
+The API for an individual complaint can be accessed by GETting:
 
-Search ability complete
+- api/v1/complaints/"specific_complaint_id".json
 
-NEED
+AND passing in your API token in the Header
+thusly:
 
-* User specify address
-* Map shows user address
-* App informs user of complaints in their building
-* Complaint types, number of complaints etc
+- Authorization Token token=Y0uR-sUp3R-sW337-t0k3N
 
-NICE
-* heat map of surrounding area showing compliants in the
-surrounding area map
+Make sure there are NO spaces between the equal sign and the token or you'll get
+bounced out very much unlike a boss.  
 
-OH SHIT
-* List of addresses showing the number and types of complaints
-
-10/9
-
-NEED
-* user chooses from 1 of 10 addresses
-* shows the number and types of complaints
-
-NICE
-* has map of the address that they picked
-
-10/2
-* info uploaded into database
-* user can sign in with facebook
+Enjoy!
+==
