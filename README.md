@@ -6,7 +6,7 @@ With a simple search of the map you can find out which spots in NYC have the mos
 or least complaints submitted to NYC's Department of Buildings.
 
 Make sure to only search in NYC, as the complaints only pertain to the city and its boroughs.
- 
+
 Complaints range from Illegal Animal's Sold to Elevator's Being out.  All complaints
 on the site are currently active and open with the Department of Buildings.
 
@@ -63,3 +63,5 @@ bounced out very much unlike a boss.
 
 Enjoy BetterSpaceNYC!
 ==
+
+Credit to [Derik Eder](http://derekeder.com/) for the awesome template he provided!
