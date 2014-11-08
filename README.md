@@ -61,5 +61,5 @@ thusly:
 Make sure there are NO spaces between the equal sign and the token or you'll get
 bounced out very much unlike a boss.  
 
-Enjoy!
+Enjoy BetterSpaceNYC!
 ==
