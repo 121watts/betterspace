@@ -2,9 +2,11 @@ What is BetterSpaceNYC?
 ==
 
 BetterSpaceNYC allows NYC residents to see which areas suck and which areas don't.
-With a simply search of the map you can find out which spots in NYC have the most
+With a simple search of the map you can find out which spots in NYC have the most
 or least complaints submitted to NYC's Department of Buildings.
 
+Make sure to only search in NYC, as the complaints only pertain to the city and its boroughs.
+ 
 Complaints range from Illegal Animal's Sold to Elevator's Being out.  All complaints
 on the site are currently active and open with the Department of Buildings.
 
